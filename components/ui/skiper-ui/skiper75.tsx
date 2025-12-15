@@ -214,18 +214,18 @@ const Skiper75Carousel = () => {
                       {user?.token ? (
                         <>
                           <Link href="/history">
-                            <span className="px-4 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
+                            <span className="px-2 lg:px-5 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
                               History
                             </span>
                           </Link>
                           <Link href="/profile">
-                            <span className="px-4 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
+                            <span className="px-2 lg:px-5 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
                               Profile
                             </span>
                           </Link>{" "}
                           {/* 👇 Mobile par hide, lg+ par show */}
                           <Link href="/home">
-                            <span className="px-4 cursor-pointer hidden lg:inline hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
+                            <span className="px-2 lg:px-5 cursor-pointer hidden lg:inline hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
                               Meeting
                             </span>
                           </Link>
@@ -233,13 +233,13 @@ const Skiper75Carousel = () => {
                       ) : null}
 
                       <Link href="/about">
-                        <span className="px-4 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
+                        <span className="px-2 lg:px-5 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
                           About
                         </span>
                       </Link>
 
                       <Link href="/contact">
-                        <span className="px-4 cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
+                        <span className="px-2  cursor-pointer hover:underline hover:text-white hover:decoration-white hover:underline-offset-8">
                           Contact
                         </span>
                       </Link>

@@ -47,13 +47,13 @@ const Skiper19 = () => {
         </Button>
       </div>
 
-      <section className="max-w-6xl z-500 mx-auto px-6 py-20 lg:mt-20 grid md:grid-cols-2 gap-10 items-center">
+      <section className="max-w-6xl z-20 mx-auto px-6 lg:mt-20 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 className="text-2xl md:text-6xl mb-10 font-bold leading-tight">
-            Connect Instantly with
+           <span className={`${ultrabol.className}`}>C</span>onnect <span className={`${ultrabol.className}`}>I</span>nstantly with
             <span className="bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text">
               {" "}
-              High-Quality Video Calls
+              <span className={`${ultrabol.className}`}>H</span>igh-<span className={`${ultrabol.className}`}>Q</span>uality <span className={`${ultrabol.className}`}>V</span>ideo Calls
             </span>
           </h1>
 
@@ -73,9 +73,9 @@ const Skiper19 = () => {
         </div>
       </section>
 
-       <section className="py-20 lg:mt-30 z-500  text-gray-900">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
-            What We Are Providing
+       <section className="max-w-6xl py-10 lg:mt-30 z-20  text-gray-900">
+          <h2 className="text-3xl md:text-5xl font-semibold text-center mb-10 ">
+            Real-time video meetings with chat
           </h2>
         <div className="max-w-6xl mx-auto px-6 lg:py-30">
 
