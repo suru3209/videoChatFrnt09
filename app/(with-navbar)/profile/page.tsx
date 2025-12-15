@@ -17,7 +17,6 @@ import { Separator } from "@/components/ui/separator";
 import axios from "axios";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
   process.env.NEXT_PUBLIC_API_URL + "/api/v1/users" ||
   "http://localhost:8080/api/v1/users";
 

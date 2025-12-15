@@ -35,7 +35,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   // ================= AXIOS INSTANCE =================
   const api = axios.create({
     baseURL:
-      process.env.NEXT_PUBLIC_API_URL ||
       process.env.NEXT_PUBLIC_API_URL + "/api/v1/users" ||
       "http://localhost:8080/api/v1/users",
     headers: { "Content-Type": "application/json" },
