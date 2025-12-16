@@ -48,36 +48,33 @@ const Skiper90: React.FC<Skiper90Props> = ({ localVideoRef, videos }) => {
 
   return (
     <div>
-    
       <div className="relative mx-auto max-w-6xl w-full min-h-[65vh] flex items-center justify-center bg-black">
         <div className="grid w-full h-full grid-cols-1 md:grid-cols-2 gap-1">
           {/* LOCAL VIDEO */}
-          <SkiperGradiantCard className="p-1 h-full w-full bg-black">
-            <GradiantCardBody className="h-full w-full bg-black">
-              <video
-                ref={localVideoRef}
-                autoPlay
-                muted
-                playsInline
-                className="h-full w-full object-cover rounded-xl bg-black"
-              />
-            </GradiantCardBody>
-          </SkiperGradiantCard>
+         
+              <div className="flex flex-col h-full w-full  dark:bg-gray-900/70 backdrop-blur-md rounded-xl p-5 shadow-sm hover:shadow-md transition-all">
+                <video
+                  ref={localVideoRef}
+                  autoPlay
+                  muted
+                  playsInline
+                  className="h-320px w-380px object-cover rounded-xl bg-black"
+                />
+              </div>
+        
 
           {/* REMOTE VIDEOS */}
           {videos.map((v) => (
-            <SkiperGradiantCard key={v.socketId} className="p-1 h-full w-full">
-              <GradiantCardBody className="h-full w-full">
+            
                 <video
                   autoPlay
                   playsInline
-                  className="h-full w-full object-cover rounded-xl bg-black"
+                  className="h320px w-380px object-cover rounded-xl bg-black"
                   ref={(ref) => {
                     if (ref) ref.srcObject = v.stream;
                   }}
                 />
-              </GradiantCardBody>
-            </SkiperGradiantCard>
+             
           ))}
         </div>
       </div>

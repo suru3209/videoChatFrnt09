@@ -8,8 +8,10 @@ import { io, Socket } from "socket.io-client";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import VideoGard from "@/components/VideoGard";
 
-const SERVER_URL = process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:8080";
+const SERVER_URL =
+  process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:8080";
 
 type VideoItem = {
   socketId: string;
@@ -125,6 +127,7 @@ const VideoMeet: React.FC = () => {
     socketRef.current.on("connect", () => {
       socketIdRef.current = socketRef.current?.id ?? null;
       socketRef.current?.emit("join-call", window.location.href, username);
+      // socketRef.current?.emit("join-call", meetingCode);
     });
 
     socketRef.current.on("signal", handleSignal);
@@ -229,6 +232,24 @@ const VideoMeet: React.FC = () => {
     await getUserMedia();
     connectSocket();
   };
+  // const joinMeeting = async () => {
+  //   if (!username.trim()) return alert("Enter username");
+
+  //   const stream = await navigator.mediaDevices.getUserMedia({
+  //     video: true,
+  //     audio: true,
+  //   });
+
+  //   window.localStream = stream;
+
+  //   if (localVideoRef.current) {
+  //     localVideoRef.current.srcObject = stream;
+  //   }
+
+  //   setAskUsername(false);
+  //   connectSocket();
+  // };
+
   /* ---------------- MEDIA TOGGLES ---------------- */
 
   const toggleAudio = () => {
@@ -311,8 +332,9 @@ const VideoMeet: React.FC = () => {
       ) : (
         <>
           {/* VIDEOS */}
-          {/* <VideoGrid localVideoRef={localVideoRef} videos={videos} /> */}
-          <Skiper90 localVideoRef={localVideoRef} videos={videos} />
+          <VideoGard localVideoRef={localVideoRef} videos={videos} />
+
+          {/* <Skiper90 localVideoRef={localVideoRef} videos={videos} /> */}
           <div className="absolute top-3 left-3 z-50 rounded-lg px-3 py-1 text-sm text-white backdrop-blur">
             Meeting Code:{" "}
             <span className="font-semibold text-white">{meetingCode}</span>
